@@ -95,7 +95,7 @@
             }
         }
         // Apagando dados de localStorage
-        var resetSettings = function(e) { // limpe todos os dados 
+        var resetSettings = function(e) { // limpe todos os dados da nota fiscal
             e.preventDefault();
 
             if (confirm('Isso apagará todos os dados. Você tem certeza?', 'Redefinir dados')) {
@@ -109,7 +109,7 @@
 
                 alert('Os dados do aplicativo foram redefinidos', 'Reinicialização bem sucedida');
 
-                location.hash = '#list'; // retornara para lista de tarefa
+                location.hash = '#list'; // retornara para lista de nota
                 dropDatabase();
             }
         }
