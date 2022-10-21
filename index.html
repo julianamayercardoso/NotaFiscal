@@ -1,0 +1,245 @@
+<!doctype html>
+<html lang="en" class="blue" manifest="tasks.appcache">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0">
+<title>Nota Fiscal</title>
+<link rel="stylesheet"
+href="http://fonts.googleapis.com/css?family=Carter+One">
+<link rel="stylesheet" href="style.css">
+<script src="app.js"></script>
+</head>
+<body class="list">
+<header>
+<h1> <span id ="user_name">Nota</span>Fiscal</h1>
+<nav>
+<ul>
+<li><a href="#list" class="list">Lista de Nota</a></li> <!-- Vai mostar os dados salvo no banco de dados-->
+<li><a href="#add" class="add">Edição </a></li> <!-- Editar a nota fiscal-->
+<li><a href="#settings" class="settings">Configuração</a></li>
+
+</ul>
+</nav>
+</header>
+<section class="list">
+<form name="search">
+<input type="search"name="query" placeholder="Busca por nomes Cadastrado ..."> <!-- Pesquisar as notas-->
+</form>
+<ul id="task_list"></ul>
+</section>
+<section class="add">
+<form name="add">
+
+<legenda><h2><center>Dados do Remetente</center></h2></legenda>
+
+
+<label>
+Nome
+<input type= "text"name="desc">
+</label>
+
+
+<label>
+CNPJ 
+<input type="text"name="cnpj">
+</label>
+
+<label>
+Inscrição Estadual
+<input type="text"name="inscricao_estadual">
+</label>
+
+<label>
+Endereço
+<input type="text"name="endereco">
+</label>
+
+<label>
+Bairro
+<input type="text"name="bairro">
+</label>
+
+<label>
+CEP 
+<input type="text"name="cep" required placeholder="88888888" required pattern= "\d{5}-?\d{3}"/>
+</label>
+
+<label>
+Municipio
+<input type="text"name="municipio">
+</label>
+
+
+<label>
+Fone/Fax
+<input type="text"name="fone_fax">
+</label>
+
+<label>
+UF
+<select name="uf">
+  <option value = > </option>
+  <option value ="RS"> RS</option>
+  <option value ="SC">SC</option>
+  <option value ="PR">PR</option>
+  <option value ="SP">SP</option>
+  <option value ="BA">BA</option>
+  <option value ="RJ">RJ</option>
+        </select>
+</label>
+
+<label>
+Data emissão (MM/DD/YYYYY)
+<input type="date"name="data_emissao">
+</label>
+
+<label>
+Data Saida
+<input type="date"name="data_saida">
+</label>
+
+<label>
+Valor total Nota
+<input type="number"name="valor_total_nota">
+</label>
+
+
+
+
+
+                <legenda><h2><center>Fatura</center></h2></legenda>
+
+                
+                    <table>
+                    
+                    <tbody>
+                    <tr>                    
+                        <td>
+                            Numero
+                            <input type="number" name="numero">
+                        </td>
+                        
+                        <td>Vencimento
+                        
+                              <input type="date"  name="vencimento" >
+                             	
+                        </td>
+
+                        <td>Tipo
+                        
+                              <select name="tipo">
+
+                              <option value ="1-Entrada"> 1-Entrada</option>
+                              <option value ="2-Saida"> 2-Saida</option>
+
+                              </select>
+                             	
+                        </td>
+
+                        <td>Valor
+                        
+                              <input type="number"  name="valor" >
+                             	
+                        </td>
+
+                        <td> Tipo-Pagamento
+                        
+                            <select name="tipo_pagamento">
+                              <option value ="Dinheiro"> Dinheiro</option>
+                              <option value ="Cartao"> Cartao</option>
+                              <option value ="Boleto"> Boleto</option>
+
+                              <select>
+                             	
+                        </td>
+                        
+                    </tr>
+                    </tbody>
+                    
+                </table>
+                
+                <br>
+                </br>
+
+          -      <legenda><h2><center>Itens da nota fiscal</center></h2></legenda>
+
+
+                   <table>
+                    
+                    <tbody>
+                    <tr>                    
+                        <td>
+                            Codigo
+                            <input type="text"  name="codigo" >
+                        </td>
+                        
+                        <td>
+                            Descrição do produto/serviço
+                            <input type="text"  name="descricao_produto_servico" >
+                        </td>
+                        
+                        <td>
+                            Unidade
+                            <input type="number"  name="uni" >
+                            
+                        </td>
+                        
+                        <td>
+                            Quantidade
+                            <input type="number"  name="quantidade" >
+                        </td>
+                        
+                        <td>
+                            Preço unidade
+                            <input type="number"  name="preco_uni" >
+                        </td>
+
+                        <td>
+                            Preço total
+                            <input type="number"  name="preco_total" >
+                            
+                           
+                        </td>
+
+
+                    </tr>
+                    </tbody>
+                    
+                </table>
+                
+                <br>
+                </br>
+                
+
+<input type="submit"value="Adicionar Tarefas">
+
+</form>
+
+</section>
+ 
+<section class="settings">
+<form name="settings">
+<label>
+Seu Nome
+<input type="text" name="name">
+</label>
+<label>
+Esquema de Cores
+<select name="color_scheme">
+<option>Blue</option>
+<option>Red</option>
+<option> Green</option>
+
+
+</select>
+</label>
+
+
+<input type="submit"value="Salvar Configurações">
+<input type="reset"value="Redefinir Todos os Dados ">
+</form>
+</section>
+</body>
+</html>
+
+<!DOCTYPE html>
